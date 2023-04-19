@@ -6,7 +6,7 @@
 <h2> Specifications </h2>
 
 <p size = 5>
-limit = 2
+
 
 Implement the Data Structure (using classes)
 
