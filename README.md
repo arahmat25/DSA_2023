@@ -1,9 +1,9 @@
 <h1> CSC212 DSA Project B-Tree </h1>
 
-<h4> Team Members: Grant Houatchanthara , Maxwell Krusz, Amir Rahmat, Eason Chen </h4>
+<h2> Team Members: Grant Houatchanthara , Maxwell Krusz, Amir Rahmat, Eason Chen </h2>
 
 
-<h4> Specifications </h4>
+<h3> Specifications </h3>
 
 <p size = 5>
 limit = 2
@@ -21,7 +21,7 @@ Store the words of an input text file
 for the word (node) in the tree, a count with the number of repeats must also be store </p>
 
 
-<h4> What is a B-tree ? </h4>
+<h3> What is a B-tree ? </h3>
 
 <p size = 5> A B-tree is a self-balancing search tree data structure that is commonly used in databases and file systems to store large amounts of data. It is designed to keep the number of disk reads to a minimum by storing more data in each node than a binary search tree, which reduces the number of levels needed to reach a leaf node.
 
