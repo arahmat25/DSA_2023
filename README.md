@@ -1,4 +1,7 @@
-# DSA_2023 
+<h1> CSC212 DSA Project B-Tree </h1>
+
+<h4> Team Members: Grant Houatchanthara , Maxwell Krusz, Amir Rahmat, Eason Chen </h4>
+
 
 B-Tree
 
