@@ -3,7 +3,7 @@
 <h4> Team Members: Grant Houatchanthara , Maxwell Krusz, Amir Rahmat, Eason Chen </h4>
 
 
-<h4 Specifications </h4>
+<h4> Specifications </h4>
 
 <p size = 5>
 limit = 2
