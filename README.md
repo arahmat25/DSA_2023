@@ -3,7 +3,7 @@
 <h4> Team Members: Grant Houatchanthara , Maxwell Krusz, Amir Rahmat, Eason Chen </h4>
 
 
-<h3> Specifications </h3>
+<h4 Specifications </h4>
 limit = 2
 
 Implement the Data Structure (using classes)
