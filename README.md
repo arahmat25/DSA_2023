@@ -4,6 +4,8 @@
 
 
 <h4 Specifications </h4>
+
+<p size = 5>
 limit = 2
 
 Implement the Data Structure (using classes)
@@ -16,12 +18,12 @@ generate a DOT file for visualization
 
 Store the words of an input text file
 
-for the word (node) in the tree, a count with the number of repeats must also be store
+for the word (node) in the tree, a count with the number of repeats must also be store </p>
 
 
 <h4> What is a B-tree ? </h4>
 
-<p size = 8> A B-tree is a self-balancing search tree data structure that is commonly used in databases and file systems to store large amounts of data. It is designed to keep the number of disk reads to a minimum by storing more data in each node than a binary search tree, which reduces the number of levels needed to reach a leaf node.
+<p size = 5> A B-tree is a self-balancing search tree data structure that is commonly used in databases and file systems to store large amounts of data. It is designed to keep the number of disk reads to a minimum by storing more data in each node than a binary search tree, which reduces the number of levels needed to reach a leaf node.
 
 In a B-tree, each node contains multiple keys and pointers to its child nodes, and the number of keys per node is kept within a certain range. A B-tree of order m satisfies the following properties:
 
