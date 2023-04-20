@@ -1,8 +1,3 @@
-//B-Tree header file with classes
-
-#ifndef B_TREE_H
-#define B_TREE_H
-
 #include <iostream>
 #include <vector>
 #include <string>
@@ -10,145 +5,32 @@
 #include <sstream>
 #include <set>
 
+using namespace std;
+
 // B-Tree node class 
 
 class BTreeNode{
-  int *keys : // array/vector of keys
-  int t; // min degree that defines the range for the # of keys 
-  int numKeys; // number of keys in node 
-  BTreeNode **child_ptr;  // array/vector of child pointers
-  bool leaf; //true when node is leaf, else false 
-  
-  public: 
-  
-  BTreeNode(int temp, bool leaf); // constructor
-  
-  void insertNonFull(int k); // helper function that inserts a key into a node that isnt filled
-  void navigate(); //function that traverses nodes in a subtree that are rooted with this node 
-  void splitChild(int i, BTreeNode *y); //helper function to split a child node
-  
-  BTreeNode *search(int k); // function that searches for a key in a subtree rooted in this node
-  
-  friend class BTree;
-  
-  
+    int degree; // degree of tree, used to calculate lower and upper bounds of keys/children
+    bool leaf; //true when node is leaf, else false
+    int numKeys; // number of keys in node
+    vector<int> *keys; // vector of keys
+    vector<BTreeNode> **child_ptr;  // vector of pointers to children
+
+public:
+
+    BTreeNode(int degree, bool leaf); // node constructor
+
+    void insertNonFull(int key); //  inserts a key into a node that is not filled
+    void navigate(); // outputs the path the
+    void splitChild(int i, BTreeNode *y); // split a child node
+
+    BTreeNode *search(int key); // searches for a key in a subtree
+
+    friend class BTree;
+
+
 };
 
+class BTree{
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#endif
+};
