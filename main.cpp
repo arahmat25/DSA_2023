@@ -2,8 +2,8 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "B-Tree.h"
-#include "B-Tree.cpp"
+#include "B_Tree.h"
+#include "B_Tree.cpp"
 
 int main(int argc, char*argv[]){
 
