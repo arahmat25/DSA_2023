@@ -1,7 +1,7 @@
 //B-Tree header file with classes
 
-#ifndef B-TREE_H
-#define B-TREE_H
+#ifndef B_TREE_H
+#define B_TREE_H
 
 #include <iostream>
 #include <vector>
