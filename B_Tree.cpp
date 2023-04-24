@@ -41,9 +41,9 @@ void BTreeNode::printDot(BTreeNode* temp,string fname){
     if(temp->leaf == false){
         ofstream output_file(fname,ios::app); //opens the file
         if(output_file.is_open()){
-            
+
             for(int i = 0;i <= temp->numKeys;i++){
-                    //writes a parent pointed to  all its children
+                //writes a parent pointed to  all its children
                 output_file << "node" << temp << "->" << "node" << temp->child_ptr[i] << "\n";
                 output_file << "node" << temp->child_ptr[i] << "[label=" << '"';
                 for(int j = 0; j < temp->child_ptr[i]->numKeys; j++){ // prints out the children's keys
@@ -86,14 +86,18 @@ void BTree::printDot(){
 }
 
 // Find a specific key in the tree
-BTreeNode *BTreeNode::searchTree(int key){
+BTreeNode *BTreeNode::searchTree(int key, int count){
     // Loop through the keys until the correct key is found, or you reach the last key
+    count +=1; // count is incremented by 1
     int i = 0;
     while (keys[i] < key && i < numKeys) i++;
     // If the key is found, return the node pointer OR if the node is a leaf and the key is not found, return a null pointer, as the key is not in the tree.
-    if (keys[i] == key || (leaf && keys[i] != key)) return (keys[i] == key) ? this : nullptr;
-    // If the key is not found, and it is not a leaf, move to the child node that has contains the range value of the key
-    else return child_ptr[i]->searchTree(key);
+    if (keys[i] == key || (leaf && keys[i] != key)) {
+        cout << "The count of nodes searched is " << count << "."<< endl; // this is the last check, output how many nodes were checked. 
+        return (keys[i] == key) ? this : nullptr;
+    }
+        // If the key is not found, and it is not a leaf, move to the child node that has contains the range value of the key
+    else return child_ptr[i]->searchTree(key, count);
 }
 
 // The main function that inserts a new key in this B-Tree
