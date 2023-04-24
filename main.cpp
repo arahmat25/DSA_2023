@@ -5,6 +5,20 @@
 #include "B_Tree.h"
 #include "B_Tree.cpp"
 
+void read_file(const string& filename, BTree tree){
+    fstream newfile;
+    newfile.open(filename, std::ios::in);
+    string line;
+    while (std::getline(newfile, line)){
+        std::string hold;
+        std::stringstream streamline(line);
+        while (std::getline(streamline, hold,' ')) {
+            tree->insert(stoi(hold));
+        }
+    }
+}
+
+
 int main(int argc, char* argv[]) {
 
     // Take in the filename a command line argument and assign it to a string
