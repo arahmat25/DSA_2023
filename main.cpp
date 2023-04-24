@@ -59,12 +59,12 @@ int main(int argc, char* argv[]) {
             cout << endl;
         }
 
-        // Option 2 - Search for a value in the tree, output if it is in the tree or not.
+            // Option 2 - Search for a value in the tree, output if it is in the tree or not.
         else if (option == 2){
             int search_val;
             cout << "What value would you like to search for? Please enter an integer. " << endl;
             cin >> search_val;
-            if (tree.search(search_val) == nullptr){
+            if (tree.search(search_val, 0) == nullptr){
                 cout << "The value " << search_val << " is not in this B-Tree.";
             }
             else{
@@ -73,25 +73,25 @@ int main(int argc, char* argv[]) {
             cout << endl;
         }
 
-        // Option 3 - Output the path of the tree
+            // Option 3 - Output the path of the tree
         else if (option == 3){
             cout << "Here is the tree path:" << endl;
             tree.printTree();
             cout << endl;
         }
-        // Option 4 - Output DOT visualization
+            // Option 4 - Output DOT visualization
         else if (option == 4){
             cout << "DOT Visualization file created." << endl;
             tree.printDot();
             cout << endl;
         }
-        // Option 5 - Exit the program
+            // Option 5 - Exit the program
         else if (option == 5){
             cout << "Exiting program, goodbye." << endl;
             cout << endl;
         }
 
-        // Output if user does not enter an integer 1-7
+            // Output if user does not enter an integer 1-7
         else {
             cout << "Invalid option, please try again." << endl;
             cout << endl;
