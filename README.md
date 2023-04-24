@@ -16,9 +16,22 @@
 <br></br>
 B-trees are efficient for large datasets because they have a low depth and minimize disk reads. They are commonly used in file systems, databases, and operating systems where fast access to data on disk drives is critical. </p>
 
-<h2> How to compile our code </h2>
-
+<h2> How to compile our code in CLion </h2>
 <p size = 5>
 
 
+ 
+ 
+ 
+ 
+ </p>
+
+<h2> How to compile our code in Visual Studio Code </h2>
+<p size = 5>
+
+
+ 
+ 
+ 
+ 
  </p>
