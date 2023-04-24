@@ -49,25 +49,82 @@ Website used :  https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0D%
  
  
 <h2> Pseudo Code for BTree header file </h2>
-<p size = 5>
+    class BTreeNode:
+        degree // degree of tree
+        leaf // true when node is leaf, else false
+        numKeys // number of keys in node
+        keys // array of keys
+        child_ptr // array of pointers to children
 
+        constructor(degree, leaf) // node constructor
+        insertNonFull(key) // insert a key into a node that is not filled
+        printTree() // output the path
+        printDot(temp, fname) // output dot visualization
+        splitChild(i, y) // split a child node
+        searchTree(key) // search for a key in a subtree
 
- 
- 
- 
- 
- </p>
- 
+    class BTree:
+        degree // degree of tree
+        root // root pointer
+
+        constructor(degree) // tree constructor
+        printTree() // output path
+        printDot()
+        insert(key) // main function to insert a new key in the B-Tree
+        search(key) // function to search for a key in the tree
  
  <h2> Pseudo Code for BTree CPP file </h2>
-<p size = 5>
+       B-TreeInsert(Node root, int key):
+          if root is null:
+              // If the tree is empty, create a new root node with the key
+              set root to createNewNode(key)
+          else if root is full:
+              // If the root is full, split it and create a new root
+              set new_node to createNewNode()
+              children[0] of new_node = root
+              splitChild(0, root)
+              if new_node.keys[0] < key:
+                  // Determine which child to insert the key into
+                  insertNonFull(children[1] of new_node, key)
+              else:
+                  insertNonFull(children[0] of new_node, key)
+              root = new_node
+          else:
+              // If the root is not full, insert the key into the non-full root
+              insertNonFull(root, key)
+
+      insertNonFull(Node node, int key):
+          if node is a leaf node:
+              // If the node is a leaf, insert the key into the node
+              find position i for key in node.keys
+              shift keys[i] to keys[node.numKeys] one position to the right
+              set keys[i] to key
+              increment node.numKeys by 1
+          else:
+              // If the node is not a leaf, insert the key into the appropriate child
+              find position i for key in node.keys
+              if node.children[i] is full:
+                  // If the child is full, split it and insert the key into the appropriate child
+                  splitChild(i, node.children[i])
+                  if node.keys[i] < key:
+                      // Determine which child to insert the key into
+                      increment i by 1
+              insertNonFull(node.children[i], key)
+
+      splitChild(int index, Node node):
+          // Split a full child node of a B-Tree node
+          create new_node
+          set new_node as a child of node
+          move keys and children of node at positions index+1 to node.numKeys one position to the right
+          copy keys and children of node.children[index] to new_node
+          update node.numKeys and new_node.numKeys
+
+      createNewNode():
+          // Create a new B-Tree node
+          create a new node with initialized keys, children, and other properties
+          return the new node
 
 
- 
- 
- 
- 
- </p>
  
  
   <h2> Pseudo Code for MAIN CPP file </h2>
