@@ -6,7 +6,7 @@
 
 <p size = 5> A B-tree is a self-balancing search tree data structure that is commonly used in databases and file systems to store large amounts of data. It is designed to keep the number of disk reads to a minimum by storing more data in each node rather than a binary search tree, which reduces the number of levels needed to reach a leaf node. In a B-tree, each node contains multiple keys and pointers to its child nodes, and the number of keys per node is kept within a certain range. A B-tree of order t satisfies the following properties:
  <br>                            </br>
-<br>-Every node has at most m children.
+<br>-Every node has at most m children. </br>
 <br>-Every non-leaf node (except root) has at least ⌈m/2⌉ children.</br>
 <br>-The root has at least two children if it is not a leaf node.</br>
 <br>-A non-leaf node with k children contains m-1 keys.</br>
