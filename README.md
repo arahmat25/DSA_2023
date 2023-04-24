@@ -23,17 +23,21 @@ B-trees are efficient for large datasets because they have a low depth and minim
 <br>- The only section that needs to be changed is the 'Program Arguments:' input box. This is where you input the text file you wish to run.</br>
 <br>- Once the text file name is input, click "Apply" and then "OK"</br>
 <br>- Here is a video demonstrating these steps: https://streamable.com/zni7vc</br>
+</p>
 
-
+<h2> How to compile our code in Visual Studio Code </h2>
+<p size = 5>
+<br>- The input text files for this program should be a list of integer numbers on a single line, each seperated by a single space. For example:</br>
+<br> 3 6 9 10 5 2 7 11 8 1 4</br>
 
  
  
  
  
  </p>
-
-<h2> How to compile our code in Visual Studio Code </h2>
-<p size = 5>
+ 
+ <h2> Requirements for both compilers: </h2>
+ <p size = 5>
 
 
  
