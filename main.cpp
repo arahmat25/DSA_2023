@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
         // OPTION MENU
         cout << "Here are the options for this program: " << "\n"
              << "[1] - Insert a new key value." << "\n"
-             << "[2] - Search for a key." << "\n"
+             << "[2] - Search for a key and output how many nodes were searched." << "\n"
              << "[3] - Output path of tree." << "\n"
              << "[4] - Generate DOT file for visualization." << "\n"
              << "[5] - Exit the program." << "\n"
