@@ -22,7 +22,7 @@ B-trees are efficient for large datasets because they have a low depth and minim
 <br>- Click "Edit Configurations..."</br>
 <br>- The only section that needs to be changed is the 'Program Arguments:' input box. This is where you input the text file you wish to run.</br>
 <br>- Once the text file name is input, click "Apply" and then "OK"</br>
-<br>https://streamable.com/zni7vc</br>
+<br>- Here is a video demonstrating these steps: https://streamable.com/zni7vc</br>
 
 
 
