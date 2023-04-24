@@ -25,7 +25,6 @@ B-trees are efficient for large datasets because they have a low depth and minim
 <br>- Here is a video demonstrating these steps: https://streamable.com/zni7vc</br>
 <br>- The input text files must be located in the "cmake-build-debug" folder of the project.</br>
 ![image](https://user-images.githubusercontent.com/98424311/233893999-77cd04eb-348b-4adb-a802-d7ee21dd323d.png)
-
 </p>
 
 <h2> How to compile our code in Visual Studio Code </h2>
@@ -33,30 +32,27 @@ B-trees are efficient for large datasets because they have a low depth and minim
 <br>- Make sure that all the files,(main.cpp, btree.cpp btree.h) plus the data file are in the same folder. </br>
 <br>- Compile the main.cpp and the btree.cpp in your terminal. Ex: g++ main.cpp btree.cpp -o exec </br>
 <br>- Run the executable with the data file name as the CLA. EX: ./exec "data.txt" </br>
-
- 
- 
  </p>
  
  <h2> Requirements for both compilers: </h2>
  <p size = 5>
 <br>- The input text files for this program should be a list of integer numbers on a single line, each seperated by a single space. For example:</br>
 <br> 3 6 9 -10 5 2 7 11 8 1 4</br>
-
+ </p>
  
- 
- 
- 
+  <h2> Runtime Requirements: </h2>
+ <p size = 5>
+<br>- After compiling and running the code this message will be displayed in the terminal:</br>
+<br> "What would you like the degree of this B-Tree to be? Input integer here:" </br>
+<br>- The user should input an integer that is to be the degree their tree is to be organized by. After doing so, the user will be presented with this list of options:</br>
+<br>![image](https://user-images.githubusercontent.com/98424311/234093497-e2f29f80-7d84-4a42-894e-c96165addee6.png)</br>
+<br>- The user should then enter the integer that corresponds with the option they wish to choose. </br>
+<br>- This functionality is the exact same for both IDEs. </br>
  </p>
  
  <h2> How to visualize DOT file </h2>
 <p size = 5>
 Website used :  https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0D%0A%0D%0A%7D%0D%0A 
-
- 
- 
- 
- 
  </p>
  
  
