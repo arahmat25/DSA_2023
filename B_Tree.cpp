@@ -35,41 +35,23 @@ void BTreeNode::printTree(){
     if (leaf == false) child_ptr[i]->printTree();
 }
 
-void BTree::printDot(){
-    if(root != NULL) {
-        string fname = "dot_file.txt";
-        ofstream output_file(fname);
-        output_file << "digraph G {"<< "\n";
-        output_file << "\n";
-        output_file << "node" << root << "[label=" << '"';
-        for(int i = 0; i < root->numKeys;i++){
-            output_file << root->keys[i] << " ";
-        }
-        output_file << '"' << "]" << "\n";
-        output_file.close();
-        root->printDot(root,fname);
-    }
-    ofstream output_file("dot_file.txt",ios::app);
-    if(output_file.is_open()){
-        output_file << "}" << endl;
-    }
-}
-
+//outputs tree in dot file
 void BTreeNode::printDot(BTreeNode* temp,string fname){
+    //makes sure the inputed node is not a leaf
     if(temp->leaf == false){
-        ofstream output_file(fname,ios::app);
+        ofstream output_file(fname,ios::app); //opens the file
         if(output_file.is_open()){
-
+            
             for(int i = 0;i <= temp->numKeys;i++){
-
+                    //writes a parent pointed to  all its children
                 output_file << "node" << temp << "->" << "node" << temp->child_ptr[i] << "\n";
                 output_file << "node" << temp->child_ptr[i] << "[label=" << '"';
-                for(int j = 0; j < temp->child_ptr[i]->numKeys; j++){
+                for(int j = 0; j < temp->child_ptr[i]->numKeys; j++){ // prints out the children's keys
                     output_file << temp->child_ptr[i]->keys[j] << " ";
                 }
                 output_file << '"' << "]" << "\n";
                 if(!temp->child_ptr[i]->leaf){
-                    printDot(temp->child_ptr[i], fname);
+                    printDot(temp->child_ptr[i], fname); // calls the function again for every child in the
                 }
 
             }
@@ -77,6 +59,30 @@ void BTreeNode::printDot(BTreeNode* temp,string fname){
 
         output_file.close();
     }
+}
+
+//outputs tree in dot file
+void BTree::printDot(){
+    //makes sure there is a btree
+    if(root != NULL) {
+        //opens the file
+        string fname = "dot_file.txt";
+        ofstream output_file(fname);
+        output_file << "digraph G {"<< "\n"; //starts the dot file
+        output_file << "\n";
+        output_file << "node" << root << "[label=" << '"';
+        for(int i = 0; i < root->numKeys;i++){
+            output_file << root->keys[i] << " ";
+        }
+        output_file << '"' << "]" << "\n";
+        output_file.close();
+        root->printDot(root,fname); //has the root call the BTreeNode's printdot function
+    }
+    ofstream output_file("dot_file.txt",ios::app); //opens the file to add the ending and closes the file
+    if(output_file.is_open()){
+        output_file << "}" << endl;
+    }
+    output_file.close();
 }
 
 // Find a specific key in the tree
