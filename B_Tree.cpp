@@ -22,3 +22,16 @@ BTreeNode::BTreeNode(int deg, bool leafYN){
     keys = new int[2degree-1];
     child_ptr = new BTreeNode[2*degree];
 }
+
+// Output Tree
+void BTreeNode::printTree(){
+    int i;
+    for (i = 0; i < numKeys; i++){
+        // If the node is not a leaf, output all keys within that node.
+        if (!leaf) child_ptr[i]->printTree();
+        // If it is not a leaf, move to it's next child node
+        std::cout << " " << keys[i];
+    }
+    // Output the keys of the last child node
+    if (leaf == false) child_ptr[i]->printTree();
+}
