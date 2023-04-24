@@ -7,23 +7,18 @@
 
 using namespace std;
 
-// B-Tree node class 
+// Constructor for B-Tree
+BTree::BTree(int deg){
+    // Initialize the root to a null pointer and set the degree to deg - This constructor is called by the main and degree is a user input
+    root = nullptr;  degree = deg;
+}
 
-class BTreeNode{
-
-    int degree; // degree of tree, used to calculate lower and upper bounds of keys/children
-    bool leaf; //true when node is leaf, else false
-    int numKeys; // number of keys in node
-    int *keys; // vector of keys
-    BTreeNode **child_ptr;  // vector of pointers to children
-
-public:
-    BTreeNode(int degree, bool leaf); // node constructor
-    void insertNonFull(int key); //  inserts a key into a node that is not filled
-    void printTree(); // outputs the path
-    void printDot(BTreeNode *temp,string fname); // outputs dot visualization
-    void splitChild(int i, BTreeNode *y); // split a child node
-    BTreeNode *searchTree(int key); // searches for a key in a subtree
-    friend class BTree;
-};
-
+// Constructor for B-Tree node
+BTreeNode::BTreeNode(int deg, bool leafYN){
+    // Copy the given minimum degree and leaf property and create a new keys array to hold the keys of the node and new child pointer array to store pointers for this node's children
+    degree = deg;
+    leaf = leafYN;
+    numKeys = 0;
+    keys = new int[2degree-1];
+    child_ptr = new BTreeNode[2*degree];
+}
