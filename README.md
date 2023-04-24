@@ -202,5 +202,5 @@ Website used :  https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0D%
     // Option 5 - exits program 
     else if (option == 5){
    
-    // Output if user does not enter an integer 1-7
+    // Output if user does not enter an integer 1-5
         else { invalid option} 
