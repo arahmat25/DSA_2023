@@ -52,6 +52,7 @@ B-trees are efficient for large datasets because they have a low depth and minim
  
  <h2> How to visualize DOT file </h2>
 <p size = 5>
+ <br>If the user picks option 4 at any point during the program runtime, the program will create a file named "dot_file.txt" and within that file it will output the code needed to visualize the BTree on a website that we have used for one of our labs. The "dot_file.txt" is saved in the same place the input files should be located, which is different for both IDEs, so refer to the sections above if you are not certain where the file has been created and placed. </br>
 Website used :  https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0D%0A%0D%0A%7D%0D%0A 
  </p>
  
