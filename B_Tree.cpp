@@ -1,4 +1,5 @@
 #include <iostream>
+#include "B_Tree.h"
 #include <vector>
 #include <string>
 #include <fstream>
