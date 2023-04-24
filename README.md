@@ -71,38 +71,37 @@ Website used :  https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0D%
  
  
   <h2> Pseudo Code for MAIN CPP file </h2>
-<p size = 5>
 
-// Open the file for input
-fstream newfile;
-newfile.open(filename, std::ios::in);
+    // Open the file for input
+    fstream newfile;
+    newfile.open(filename, std::ios::in);
 
-// Read each line and insert values into the B-Tree
-string line;
-while (std::getline(newfile, line)){}
+    // Read each line and insert values into the B-Tree
+    string line;
+    while (std::getline(newfile, line)){}
 
-// main 
-int main(int argc, char* argv[]) {
+    // main 
+    int main(int argc, char* argv[]) {
  
-// Take in the filename a command line argument and assign it to a string
-string filename = argv[1];
+    // Take in the filename a command line argument and assign it to a string
+    string filename = argv[1];
 
-// Initialize degree integer and ask the user what degree they would like to set for the B-Tree
-int degree;
-cout << "What would you like the degree of this B-Tree to be? Input integer here:";
-cin >> degree;
+    // Initialize degree integer and ask the user what degree they would like to set for the B-Tree
+    int degree;
+    cout << "What would you like the degree of this B-Tree to be? Input integer here:";
+    cin >> degree;
 
-// Construct B-Tree with the given degree
-BTree tree(degree);
+    // Construct B-Tree with the given degree
+    BTree tree(degree);
 
-// Call the read_file function to insert values from the file into the B-Tree
-read_file(filename, &tree);
+    // Call the read_file function to insert values from the file into the B-Tree
+    read_file(filename, &tree);
 
-// Initialize integer holder for option number;
-int option = 0;
+    // Initialize integer holder for option number;
+    int option = 0;
 
-// Loop through the option menu unless the user chooses to exit the program (option 5)
-while (option != 5) {
+    // Loop through the option menu unless the user chooses to exit the program (option 5)
+    while (option != 5) {
 
     // Print the option menu
     cout << "Here are the options for this program: " << "\n"
@@ -133,4 +132,3 @@ while (option != 5) {
    
     // Output if user does not enter an integer 1-7
         else { invalid option} 
- </p>
