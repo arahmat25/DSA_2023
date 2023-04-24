@@ -18,6 +18,9 @@ B-trees are efficient for large datasets because they have a low depth and minim
 
 <h2> How to compile our code in CLion </h2>
 <p size = 5>
+- Click the drop down for the run configuration located in the top right your application.
+https://streamable.com/zni7vc
+-
 
 
  
