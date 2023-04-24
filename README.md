@@ -49,6 +49,7 @@ Website used :  https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0D%
  
  
 <h2> Pseudo Code for BTree header file </h2>
+
     class BTreeNode:
         degree // degree of tree
         leaf // true when node is leaf, else false
@@ -74,6 +75,7 @@ Website used :  https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0D%
         search(key) // function to search for a key in the tree
  
  <h2> Pseudo Code for BTree CPP file </h2>
+ 
        B-TreeInsert(Node root, int key):
           if root is null:
               // If the tree is empty, create a new root node with the key
