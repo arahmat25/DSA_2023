@@ -32,5 +32,15 @@ public:
 };
 
 class BTree{
+    
+int degree;  // degree of tree, used to calculate lower and upper bounds of keys/children
+    BTreeNode root; // root pointer
 
+public:
+    explicit BTree(int _degree);// tree constructor
+    void printTree(){root->printTree();} // outputs path
+    void printDot();
+    void insert(int key); // The main function that inserts a new key in this B-Tree
+    // function to search a key in this tree
+    BTreeNode search(int key){return root->searchTree(key);}
 };
