@@ -36,9 +36,9 @@ B-trees are efficient for large datasets because they have a low depth and minim
  
  </p>
  
- <h2> How to visualize DOT file using https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0D%0A%0D%0A%7D%0D%0A </h2>
+ <h2> How to visualize DOT file </h2>
 <p size = 5>
-
+Website used :  https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0D%0A%0D%0A%7D%0D%0A 
 
  
  
