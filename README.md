@@ -30,9 +30,9 @@ B-trees are efficient for large datasets because they have a low depth and minim
 
 <h2> How to compile our code in Visual Studio Code </h2>
 <p size = 5>
-<br>- Make sure that all the files,(main.cpp, btree.cpp btree.h) plus the data file are in the same folder. 
-<br>- Compile the main.cpp and the btree.cpp in your terminal. Ex: g++ main.cpp btree.cpp -o exec
-<br>- Run the executable with the data file name as the CLA. EX: ./exec "data.txt" 
+<br>- Make sure that all the files,(main.cpp, btree.cpp btree.h) plus the data file are in the same folder. </br>
+<br>- Compile the main.cpp and the btree.cpp in your terminal. Ex: g++ main.cpp btree.cpp -o exec </br>
+<br>- Run the executable with the data file name as the CLA. EX: ./exec "data.txt" </br>
 
  
  
