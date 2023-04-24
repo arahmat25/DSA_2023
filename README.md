@@ -17,7 +17,7 @@
 B-trees are efficient for large datasets because they have a low depth and minimize disk reads. They are commonly used in file systems, databases, and operating systems where fast access to data on disk drives is critical. </p>
 
 <h2> How to compile our code in CLion </h2>
-<p size = 5>
+<p size = 5> For Visual Studio Code, first we open up the terminal, and type g++ main.cpp B_Tree.cpp -o main, then we have an input file with numbers in it, and we type in ./main input.txt, then we use the menu option
 
 
  
