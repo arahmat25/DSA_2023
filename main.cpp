@@ -1,11 +1,9 @@
 #include <iostream>
-#include <fstream>
-#include <sstream>
-#include <string>
 #include "B_Tree.h"
-#include "B_Tree.cpp"
+#include <string>
+using namespace std;
 
-void read_file(const string& filename, BTree tree){
+void read_file(const string& filename, BTree *tree){
     fstream newfile;
     newfile.open(filename, std::ios::in);
     string line;
@@ -35,7 +33,7 @@ int main(int argc, char* argv[]) {
     // Call read file function
     read_file(filename, &tree);
 
-  // Initialize integer holder for option number;
+    // Initialize integer holder for option number;
     int option = 0;
 
     // Loop through the option menu unless the user chooses to exit the program (option 7)
@@ -52,7 +50,7 @@ int main(int argc, char* argv[]) {
         // User inputs option
         cin >> option;
 
-        // Option 1 - Output an individual deliverable, and it's corresponding grade
+        // Option 1 - Insert a value into the tree
         if (option == 1){
             int insert_val;
             cout << "What value would you like to insert? Please enter an integer. " << endl;
@@ -61,7 +59,7 @@ int main(int argc, char* argv[]) {
             cout << endl;
         }
 
-        // Option 2 - Output a category, all grades within that category, and it's total
+        // Option 2 - Search for a value in the tree, output if it is in the tree or not.
         else if (option == 2){
             int search_val;
             cout << "What value would you like to search for? Please enter an integer. " << endl;
@@ -75,19 +73,19 @@ int main(int argc, char* argv[]) {
             cout << endl;
         }
 
-        // Option 3 - Output all individual grades, the course total, and it's corresponding letter grade
+        // Option 3 - Output the path of the tree
         else if (option == 3){
             cout << "Here is the tree path:" << endl;
             tree.printTree();
             cout << endl;
         }
-        // Option 3 - Output all individual grades, the course total, and it's corresponding letter grade
+        // Option 4 - Output DOT visualization
         else if (option == 4){
             cout << "DOT Visualization file created." << endl;
             tree.printDot();
             cout << endl;
         }
-
+        // Option 5 - Exit the program
         else if (option == 5){
             cout << "Exiting program, goodbye." << endl;
             cout << endl;
@@ -104,4 +102,3 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
-
