@@ -79,3 +79,31 @@ void BTreeNode::printDot(BTreeNode* temp,string fname){
         output_file.close();
     }
 }
+// Find a specific key in the tree
+BTreeNode *BTreeNode::searchTree(int key){
+    // Loop through the keys until the correct key is found, or you reach the last key
+    int i = 0;
+    while (keys[i] < key && i < numKeys) i++;
+    // If the key is found, return the node pointer OR if the node is a leaf and the key is not found, return a null pointer, as the key is not in the tree.
+    if (keys[i] == key || (leaf && keys[i] != key)) return (keys[i] == key) ? this : nullptr;
+    // If the key is not found, and it is not a leaf, move to the child node that has contains the range value of the key
+    else return child_ptr[i]->searchTree(key);
+}
+
+// The main function that inserts a new key in this B-Tree
+void BTree::insert(int key){
+    // Create the root if the tree is empty
+    if (root == nullptr) root = new BTreeNode(degree, true), root->keys[0] = key, root->numKeys = 1;
+    else{
+        if (root->numKeys == 2*degree-1){ // If the number of keys in the root is equal to the maximum allowed by the degree
+            BTreeNode *new_node = new BTreeNode(degree, false); // Create a new empty node
+            new_node->child_ptr[0] = root; // Make the previous root of the tree a child of the new node
+            new_node->splitChild(0, root); // Split the old root, move the median key to the new node
+            int i = 0;
+            if (new_node->keys[0] < key) i++; // Find the index of the key that is just before the key that is greater than the key being inserted
+            new_node->child_ptr[i]->insertNonFull(key); // Insert the key into the appropriate root
+            root = new_node; // Change the root node to the new node
+        }
+        else root->insertNonFull(key); // Else, insert the key into the non-full root.
+    }
+}
