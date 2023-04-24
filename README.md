@@ -23,6 +23,9 @@ B-trees are efficient for large datasets because they have a low depth and minim
 <br>- The only section that needs to be changed is the 'Program Arguments:' input box. This is where you input the text file you wish to run.</br>
 <br>- Once the text file name is input, click "Apply" and then "OK"</br>
 <br>- Here is a video demonstrating these steps: https://streamable.com/zni7vc</br>
+<br>- The input text files must be located in the "cmake-build-debug" folder of the project.</br>
+![image](https://user-images.githubusercontent.com/98424311/233893999-77cd04eb-348b-4adb-a802-d7ee21dd323d.png)
+
 </p>
 
 <h2> How to compile our code in Visual Studio Code </h2>
