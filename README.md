@@ -83,7 +83,7 @@ Website used :  https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0D%
 
         constructor(degree) // tree constructor
         printTree() // output path
-        printDot()
+        printDot() // output DOT visualization file
         insert(key) // main function to insert a new key in the B-Tree
         search(key) // function to search for a key in the tree
  
