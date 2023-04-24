@@ -1,10 +1,8 @@
-#include <iostream>
 #include "B_Tree.h"
+#include <iostream>
 #include <vector>
-#include <string>
 #include <fstream>
 #include <sstream>
-#include <set>
 
 using namespace std;
 
@@ -20,8 +18,8 @@ BTreeNode::BTreeNode(int deg, bool leafYN){
     degree = deg;
     leaf = leafYN;
     numKeys = 0;
-    keys = new int[2degree-1];
-    child_ptr = new BTreeNode[2*degree];
+    keys = new int[2*degree-1];
+    child_ptr = new BTreeNode *[2*degree];
 }
 
 // Output Tree
@@ -80,6 +78,7 @@ void BTreeNode::printDot(BTreeNode* temp,string fname){
         output_file.close();
     }
 }
+
 // Find a specific key in the tree
 BTreeNode *BTreeNode::searchTree(int key){
     // Loop through the keys until the correct key is found, or you reach the last key
@@ -107,4 +106,30 @@ void BTree::insert(int key){
         }
         else root->insertNonFull(key); // Else, insert the key into the non-full root.
     }
+}
+
+void BTreeNode::insertNonFull(int key) {
+    int i = numKeys;
+    if (leaf) { // If the node is a leaf, locate where the key needs to be inserted and move all keys to the right one from that location
+        while (i-- && keys[i] > key) keys[i + 1] = keys[i];
+        keys[i + 1] = key, ++numKeys; // insert the key
+    } else {
+        while (i-- && keys[i] > key) {} // find the child node that is going to hold the new key
+        if (child_ptr[i + 1]->numKeys == 2 * degree - 1) // if the child node is full, execute the split function
+            splitChild(i + 1, child_ptr[i + 1]), i += keys[i + 1] < key;
+        child_ptr[i + 1]->insertNonFull(key); // Recurse this function on the child node
+    }
+}
+
+void BTreeNode::splitChild(int i, BTreeNode *old_node) {
+    BTreeNode *new_node = new BTreeNode(old_node->degree, old_node->leaf); // Create a new node, the node should hold half of the keys in the old node
+    new_node->numKeys = degree - 1; // Change the number of keys
+    for (int j = 0; j < degree-1; j++) new_node->keys[j] = old_node->keys[j+degree]; // copy the keys to the new node
+    if (!old_node->leaf) for (int j = 0; j < degree; j++) new_node->child_ptr[j] = old_node->child_ptr[j+degree]; // If the old node was not a leaf, copy last half of the keys to the new node
+    old_node->numKeys = degree - 1; // Change the number of keys
+    for (int j = numKeys; j >= i+1; j--) child_ptr[j+1] = child_ptr[j]; // Create array space for the new child
+    child_ptr[i+1] = new_node; // Assign new node as a child of old node
+    for (int j = numKeys-1; j >= i; j--) keys[j+1] = keys[j]; // locate where the key needs to be inserted and move all keys to the right one from that location
+    keys[i] = old_node->keys[degree-1]; // insert key
+    numKeys++;
 }
