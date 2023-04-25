@@ -23,6 +23,7 @@
 <br>- Make sure that all the files,(main.cpp, btree.cpp btree.h) plus the data file are in the same folder. </br>
 <br>- Compile the main.cpp and the btree.cpp in your terminal. Ex: g++ main.cpp btree.cpp -o exec </br>
 <br>- Run the executable with the data file name as the CLA. EX: ./exec "data.txt" </br>
+![image](https://streamable.com/5bbau0)
  </p>
  
  <h2> Requirements for both IDEs: </h2>
